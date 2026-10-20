@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Enedelia Garcia-Romero</title>
+  <meta name="description" content="Enedelia Garcia-Romero: computer science student, researcher and creative mind in Atlanta. Cybersecurity, AI, robotics and community.">
+  <meta name="theme-color" content="#f8f2ea">
+  <meta property="og:title" content="Enedelia Garcia-Romero">
+  <meta property="og:description" content="Computer science student, researcher and creative mind in Atlanta.">
+  <meta property="og:image" content="assets/img/headshot.jpg">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%237b1e34'/%3E%3Ctext x='32' y='45' font-family='Arial' font-weight='700' font-size='34' text-anchor='middle' fill='%23f8f2ea'%3Ee%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,500;1,600&family=Jost:wght@300;400;500;600&display=swap">
+  <link rel="stylesheet" href="assets/css/site.css?v=39">
+</head>
+<body data-page="home">
+<div class="bg-glow" aria-hidden="true"><span class="glow"></span></div>
+<a class="skip" href="#content">Skip to content</a>
+
+<nav class="navbar" id="nav" aria-label="Main">
+  <div class="navbar__inner">
+    <a class="navbar__brand" href="#intro">Enedelia Garcia-Romero</a>
+    <ul class="navbar__links">
+      <li><a href="#intro">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#projects">Software</a></li>
+      <li><a href="#hardware-projects">Hardware</a></li>
+      <li><a href="#community">Community Connection</a></li>
+    </ul>
+    <div class="navbar__icons" data-icons></div>
+    <button class="navbar__toggle" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<div class="game-toggle" id="game-toggle">
+  <button class="game-btn" id="game-btn" type="button" aria-pressed="false"><span class="game-dot"></span>Game mode</button>
+  <button class="game-info-btn" id="game-info-btn" type="button" aria-label="How to play" aria-expanded="false">i</button>
+  <div class="game-info" id="game-info" hidden>
+    <h4>How to play</h4>
+    <p><span class="game-key">← →</span> move</p>
+    <p><span class="game-key">space</span> jump, tap again in the air to float</p>
+    <p><span class="game-key">↓</span> drop down</p>
+    <p><span class="game-key">esc</span> exit</p>
+    <span class="goal">Help the space hamster collect all 5 stars hidden down the page.</span>
+  </div>
+</div>
+<div class="cell-counter" aria-live="polite"><i></i><span id="cell-count">0 / 5</span></div>
+<canvas class="game-canvas" id="game-canvas" aria-hidden="true"></canvas>
+<div class="game-status" id="game-status" hidden role="dialog" aria-label="Game finished">
+  <h3>All stars collected!</h3>
+  <p>The space hamster made it to the moon and back. Thanks for exploring.</p>
+  <button type="button" id="game-again">Play again</button>
+</div>
+
+<div class="App">
+<main id="content">
+
+  <div id="intro">
+    <div class="intro-simulation">
+      <canvas class="simulation-container" id="portrait-canvas" role="img" aria-label="ASCII portrait of Enedelia Garcia-Romero. Move the cursor across it and the characters scatter."></canvas>
+    </div>
+    <div class="intro-block">
+      <h1 class="intro-title" aria-label="hi, ene here."><span aria-hidden="true">hi, <span class="intro-name" id="intro-name">ene</span> here.<span class="intro-cursor">|</span></span></h1>
+      <div class="fade-in-section">
+        <div class="intro-desc">Computer science student, researcher, and creative mind in Atlanta. By day I explore cybersecurity, AI, and robotics. By night I build curious little projects where technology, creativity, and community meet. Usually, one idea turns into five.</div>
+        <a class="intro-contact" data-email href="#"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>Say hi!</a>
+      </div>
+    </div>
+  </div>
+
+  <section class="section" id="about">
+    <div class="section-header fade-in-section"><h2 class="section-title">/ about me</h2></div>
+    <div class="about-content">
+      <div class="about-description fade-in-section">
+        <p>I'm a <b>computer science</b> student at <b>Georgia State University</b>, earning a B.S. with a <b>Cybersecurity Certificate</b> (<span data-grad>expected May 2028</span>). I lead the <b>GSU Robotics Club</b> as President, support first-year students as a <b>Resident Assistant</b>, and research privacy-conscious assistive technology with <b>Math Path SURS</b>.</p>
+        <p>I'm happiest where disciplines meet: security and accessibility, AI and education, hardware and the people who use it.</p>
+        <p>Here are some technologies I have been working with:</p>
+        <ul><li>Python</li><li>Java</li><li>JavaScript ES6+</li><li>React.js</li><li>Node.js</li><li>C</li></ul>
+        <p>Beyond the code, I'm launching <a data-link="podcast" href="#" target="_blank" rel="noopener">Beyond Growth</a>, a podcast about technology, careers, and community impact, and <a data-link="blog" href="#" target="_blank" rel="noopener">WrittenbyEne</a>, a Substack with essays about my interests, such as technology, literature, nutrition, and more. Both are coming soon. You'll also find me enjoying the outdoors or volunteering around Atlanta.</p>
+        <p>Want to work together or just say hello? Email me at <a data-email data-email-text href="#">enedelia.garcia.romero@gmail.com</a>. Prefer the formal version? Here's my <a href="resume.html">resume</a>.</p>
+        <p class="about-tutor">Looking for a tutor in computer science, calculus, or physics? Email <a data-tutor-email href="#">enedelia.tutors@gmail.com</a> for availability and rates.</p>
+      </div>
+      <div class="about-image fade-in-section"><img src="assets/img/about.jpg" alt="Enedelia Garcia-Romero outside at night under a tree"></div>
+    </div>
+  </section>
+
+  <section class="section" id="experience">
+    <div class="section-header fade-in-section"><h2 class="section-title">/ experience</h2></div>
+    <div class="tabs fade-in-section">
+      <div class="tabs__list" id="tabs-list" role="tablist" aria-label="Experience" aria-orientation="vertical"><span class="tabs__indicator" id="tabs-indicator"></span></div>
+      <div class="tabs__panels" id="tabs-panels"></div>
+    </div>
+  </section>
+
+  <section class="section" id="projects">
+    <div class="section-header has-link fade-in-section"><h2 class="section-title">/ software</h2><a class="explore-link" href="projects.html">View all projects</a></div>
+    <div class="carousel fade-in-section" id="carousel" aria-roledescription="carousel" aria-label="Spotlight projects">
+      <div class="carousel-inner" id="carousel-inner"></div>
+      <button class="carousel-control carousel-control--prev" type="button" aria-label="Previous"><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0"/></svg></button>
+      <button class="carousel-control carousel-control--next" type="button" aria-label="Next"><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708"/></svg></button>
+      <div class="carousel-indicators" id="carousel-indicators"></div>
+    </div>
+    <div class="projects-grid" id="project-grid"></div>
+  </section>
+
+  <section class="section" id="hardware-projects">
+    <div class="section-header fade-in-section"><h2 class="section-title">/ hardware</h2></div>
+    <div class="projects-grid" id="hardware-grid"></div>
+  </section>
+
+  <section class="section" id="community">
+    <div class="section-header has-link fade-in-section"><h2 class="section-title">/ community connection</h2><a class="explore-link" href="projects.html#community">Explore all</a></div>
+    <p class="art-description fade-in-section">Workshops, clubs, conversations, and writing. These are the spaces where I help people learn, meet, and build together.</p>
+    <div class="projects-grid" id="community-grid"></div>
+  </section>
+
+  <div id="credits">
+    <div class="ending-credits fade-in-section">
+      <div>Built and designed by Enedelia Garcia-Romero · <a data-email data-email-text href="#">enedelia.garcia.romero@gmail.com</a></div>
+      <div>Layout inspired by <a href="https://www.gazijarin.com/" target="_blank" rel="noopener">Gazi Jarin</a>.</div>
+      <div>All rights reserved. ©</div>
+    </div>
+  </div>
+</main>
+</div>
+
+<div class="lightbox" id="lightbox" hidden role="dialog" aria-modal="true" aria-label="Image viewer">
+  <button class="lightbox__close" type="button">Close ✕</button>
+  <div><img alt=""><p></p></div>
+</div>
+
+<script src="assets/js/content.js?v=39"></script>
+<script src="assets/js/portrait-data.js?v=39"></script>
+<script src="assets/js/portrait.js?v=39"></script>
+<script src="assets/js/site.js?v=39"></script>
+<script src="assets/js/game.js?v=39"></script>
+</body>
+</html>

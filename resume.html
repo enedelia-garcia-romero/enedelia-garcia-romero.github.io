@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Resume · Enedelia Garcia-Romero</title>
+  <meta name="description" content="Resume of Enedelia Garcia-Romero, Computer Science student at Georgia State University.">
+  <meta name="theme-color" content="#f8f2ea">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%237b1e34'/%3E%3Ctext x='32' y='45' font-family='Arial' font-weight='700' font-size='34' text-anchor='middle' fill='%23f8f2ea'%3Ee%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,500;1,600&family=Jost:wght@300;400;500;600&display=swap">
+  <link rel="stylesheet" href="assets/css/site.css?v=39">
+</head>
+<body data-page="resume">
+<a class="skip" href="#content">Skip to content</a>
+<nav class="navbar" id="nav" aria-label="Main">
+  <div class="navbar__inner">
+    <a class="navbar__brand" href="index.html">Enedelia Garcia-Romero</a>
+    <ul class="navbar__links">
+      <li><a href="index.html#intro">Home</a></li>
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="index.html#experience">Experience</a></li>
+      <li><a href="index.html#projects">Software</a></li>
+      <li><a href="index.html#hardware-projects">Hardware</a></li>
+      <li><a href="index.html#community">Community Connection</a></li>
+    </ul>
+    <div class="navbar__icons" data-icons></div>
+    <button class="navbar__toggle" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<main id="content" class="resume-wrap">
+  <div class="resume-bar">
+    <a class="back-link" href="index.html" style="margin:0">← back to portfolio</a>
+    <div class="intro-actions">
+      <a class="btn" data-resume-pdf href="#" download>Download PDF</a>
+      <button class="btn btn--ghost" type="button" onclick="window.print()">Print</button>
+    </div>
+  </div>
+  <article class="resume" id="resume"></article>
+</main>
+<script src="assets/js/content.js?v=39"></script>
+<script src="assets/js/site.js?v=39"></script>
+<script>
+(function () {
+  var S = window.SITE, esc = window.UI.esc, P = S.profile, L = S.links;
+  document.querySelectorAll("[data-resume-pdf]").forEach(function (a) { a.href = P.resumePdf; });
+  function item(title, right, sub, bullets) {
+    return '<div class="r-item"><div class="r-row"><strong>' + esc(title) + "</strong><span>" + esc(right || "") + "</span></div>" +
+      (sub ? '<div class="r-org">' + esc(sub) + "</div>" : "") +
+      (bullets && bullets.length ? "<ul>" + bullets.map(function (b) { return "<li>" + esc(b) + "</li>"; }).join("") + "</ul>" : "") + "</div>";
+  }
+  var contact = [P.location, '<a href="mailto:' + esc(P.email) + '">' + esc(P.email) + "</a>"];
+  if (L.linkedin) contact.push('<a href="' + esc(L.linkedin) + '">' + esc(L.linkedin.replace(/^https?:\/\/(www\.)?/, "")) + "</a>");
+  if (L.github) contact.push('<a href="' + esc(L.github) + '">' + esc(L.github.replace(/^https?:\/\//, "")) + "</a>");
+  var research = S.hardware.filter(function (h) { return h.id === "obstacle-clip"; });
+  var projects = ["least-privilege", "web-session-security", "comunidad-connect", "visionsim"].map(function (id) { return S.software.find(function (p) { return p.id === id; }); }).filter(Boolean);
+  document.getElementById("resume").innerHTML =
+    "<h1>" + esc(P.name) + "</h1>" +
+    '<div class="contact-line">' + contact.map(function (c) { return "<span>" + c + "</span>"; }).join("") + "</div>" +
+    '<p class="tagline">Computer Science · Cybersecurity · Robotics leadership · Community building</p>' +
+    "<h2>Education</h2>" + item(P.school, P.graduation, P.degree + "; " + P.certificate + " · Atlanta, Georgia", ["Relevant coursework: " + S.education.coursework.join(", ") + "."]) +
+    "<h2>Experience</h2>" + S.experience.map(function (e) { return item(e.title + " · " + e.org, e.period, null, e.bullets.slice(0, 3)); }).join("") +
+    "<h2>Research</h2>" + research.map(function (r) { return item(r.title, r.date, "Math Path Summer Research Program · Georgia State University", [r.desc]); }).join("") +
+    "<h2>Selected Projects</h2>" + projects.map(function (p) { return item(p.title, p.status, p.tech, [p.desc]); }).join("") +
+    "<h2>Organizations</h2>" + '<p style="font-size:17px;color:var(--slate)">' + S.organizations.map(function (o) { return esc(o.name) + " (" + esc(o.role) + ")"; }).join(" · ") + "</p>" +
+    "<h2>Skills</h2>" + '<dl class="r-skills">' + Object.keys(S.skills).map(function (k) { return "<dt>" + esc(k) + "</dt><dd>" + esc(S.skills[k].join(", ")) + "</dd>"; }).join("") + "</dl>";
+})();
+</script>
+</body>
+</html>
